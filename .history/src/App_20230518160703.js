@@ -1,6 +1,6 @@
 import './App.css';
 import Assessments from './components/Assessments/Assessments'
-import {AccountProvider} from './context/account.context'
+import {AccountProvider} from '../context/account.context'
 
 function App() {
   return (

@@ -1,0 +1,14 @@
+.btn.btn-bottom-nav {
+  padding: 20px 35px;
+  background: none;
+}
+
+.btn.selected {
+  background: #0082B5;
+  color: #fff;
+
+  &:hover, &:active, &:focus {
+    background: #0082B5;
+    color: #fff;
+  }
+}
