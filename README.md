@@ -5,7 +5,7 @@ Hello and welcome! Thank you for your interest in working with us at One Degree.
 
 On the One Degree website there are several Assessments that community members can fill out to receive more customized information about resources available for their situation. We want to build a page in React that shows some basic information about all these Assessments. 
 
-The Assessment data is mocked as a fake API response in `src/api/index.js`. Use this data to build the page. The design requirements for desktop and mobile can be reviewed in the included screenshots: `assessment-screen-mock.png` and `assessment-screen-mock-mobile.png`. 
+The Assessment data is mocked as a fake API response in `src/api/odas/index.js`. Use this data to build the page. The design requirements for desktop and mobile can be reviewed in the included screenshots: `assessment-screen-mock.png` and `assessment-screen-mock-mobile.png`. 
 
 This project already includes react-bootstrap which can be used to complete the requirements. You may install other libraries as needed. 
 
