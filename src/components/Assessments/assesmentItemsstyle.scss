@@ -11,6 +11,7 @@
     display: flex;
     flex-grow: 1;
     align-items: center;
+    width: 100%;
   }
   &__icon {
     padding: 8px;
@@ -53,6 +54,7 @@
       padding-right: 28px;
     }
     button {
+      width: 150px !important;
       @include mobile {
         width: 100% !important;
       }
