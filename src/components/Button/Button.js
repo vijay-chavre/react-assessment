@@ -1,12 +1,12 @@
-import React, { forwardRef }  from "react";
-import classes from "./Button.module.scss";
+import React, { forwardRef } from 'react';
+import classes from './Button.module.scss';
 
 // Default styles for Button
 const defaultButtonStyles = {
-  type: "secondary",
+  type: 'secondary',
   rounded: false,
   disabled: false,
-  width: "auto"
+  width: 'auto',
 };
 
 // Default onClick event
@@ -28,7 +28,10 @@ const onClick = () => {};
  * @param type String of HTML <button> type (i.e. 'submit', 'button', ...) (optional)
  * @param badge Number that appears on the corner of the button in a circle (best with 2 digits or less) (optional)
  */
-function Button({ text, additionalClasses, styles, onButtonClick, type, badge = null }, ref) {
+function Button(
+  { text, additionalClasses, styles, onButtonClick, type, badge = null },
+  ref
+) {
   styles = Object.assign({}, defaultButtonStyles, styles || {});
   onButtonClick = onButtonClick && !styles?.disabled ? onButtonClick : onClick;
   const buttonClasses = [
@@ -40,32 +43,32 @@ function Button({ text, additionalClasses, styles, onButtonClick, type, badge = 
     classes[styles?.oval ? 'oval' : ''],
     classes[styles?.selected ? 'selected' : ''],
     classes[styles?.disabled ? 'disabled' : ''],
-    classes[styles?.border ? 'border': 'noBorder'],
-    classes[styles?.hidden ? 'hidden': ''],
+    classes[styles?.border ? 'border' : 'noBorder'],
+    classes[styles?.hidden ? 'hidden' : ''],
     classes[styles?.background === false ? 'noBackground' : ''],
     classes[styles?.responsive ? 'responsive' : ''],
-    additionalClasses
+    additionalClasses,
   ].join(' ');
   const buttonIconContainerClasses = [
-    classes["button-icon"],
+    classes['button-icon'],
     classes[`button-icon-${styles?.icon?.position}`],
-    classes[`button-icon-${styles?.icon?.color}`]
+    classes[`button-icon-${styles?.icon?.color}`],
   ].join(' ');
 
   const buttonStyles = () => {
     let result = {
       backgroundColor: styles?.backgroundColor + ' !important' || '',
-      width: null
-    }
-    switch(styles?.width) {
-      case "full":
-        result.width = "100%";
+      width: null,
+    };
+    switch (styles?.width) {
+      case 'full':
+        result.width = '100%';
         break;
-      case "half":
-        result.width = "50%";
+      case 'half':
+        result.width = '50%';
         break;
-      case "auto":
-        result.width = "auto";
+      case 'auto':
+        result.width = 'auto';
         break;
       default:
         result.width = `${styles?.width}px`;
@@ -76,11 +79,18 @@ function Button({ text, additionalClasses, styles, onButtonClick, type, badge = 
 
   return (
     <>
-      <button ref={ref} style={buttonStyles()} disabled={styles?.disabled} className={[`${buttonClasses} ${classes.withText}`]} onClick={onButtonClick} type={type}>
-        <span className={classes.buttonText}>{text}</span>
+      <button
+        ref={ref}
+        style={buttonStyles()}
+        disabled={styles?.disabled}
+        className={[`${buttonClasses} ${classes.withText}`]}
+        onClick={onButtonClick}
+        type={type}
+      >
+        <span className={classes.buttonText}>{text} </span>
       </button>
     </>
-  )
+  );
 }
 
 export default forwardRef(Button);

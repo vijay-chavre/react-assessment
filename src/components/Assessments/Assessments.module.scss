@@ -1,0 +1,17 @@
+@import '../../assets/variable';
+
+.assessment_container {
+  padding-top: 100px;
+  width: 70% !important;
+  height: 100vh;
+  h6 {
+    text-align: left;
+    margin-bottom: 12px;
+    color: gray;
+  }
+  @include mobile {
+    width: 100% !important;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
