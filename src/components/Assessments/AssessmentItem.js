@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './assesmentItemsstyle.scss';
 import Button from '../Button/Button';
 import messageIcon from '../../assets/messageIcon.svg';
+
+// need to add proper color code here in production release.
 const ICON_BACKGROUND_TAG_COLOR = {
   Health: 'red',
   Food: 'purple',
@@ -9,9 +11,9 @@ const ICON_BACKGROUND_TAG_COLOR = {
 };
 
 function AssessmentItem({ item }) {
-  const getIconBackground = (tag) => {
+  const getIconBackground = useCallback((tag) => {
     return ICON_BACKGROUND_TAG_COLOR[tag] || 'blue';
-  };
+  }, []);
   return (
     <div className='wrapper'>
       <div className='wrapper__left'>
